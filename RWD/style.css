@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.btn-small{
+    font-size: 0.75rem;
+}
+
+.btn-big{
+    font-size: 1.5rem;
+}
+
+button{
+    background-color: magenta;
+    border: none;
+    padding: 1em 2em;
+}

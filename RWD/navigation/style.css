@@ -5,13 +5,12 @@
 }
 
 .container{
-    width: 90vw;
+    width: 95vw;
     margin: 0 auto;
     max-width: 900px;
 }
 
 header{
-    text-align: center;
     background-color: #f8f8f8;
     padding: 2em 0;
 }
@@ -50,6 +49,24 @@ nav ul{
 
 nav li{
     margin: 0 1em;
+}
+
+.recent-posts{
+    margin: 0;
+}
+.nav-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+@media(max-widht: 675px){
+    nav ul{
+        display: initial;
+    }
+
+    .nav-container{
+        display: initial;
+    }
 }
 
 .current-page{

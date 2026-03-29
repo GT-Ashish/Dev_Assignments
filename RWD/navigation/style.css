@@ -59,13 +59,22 @@ nav li{
     justify-content: space-between;
 }
 
-@media(max-widht: 675px){
+@media(max-width: 675px){
     nav ul{
-        display: initial;
+        flex-direction: column;
+
+    }
+
+    nav li{
+        padding-top: 0.5em;
     }
 
     .nav-container{
-        display: initial;
+        flex-direction : column;
+    }
+
+    header{
+        text-align: center;
     }
 }
 

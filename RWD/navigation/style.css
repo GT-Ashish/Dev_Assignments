@@ -7,6 +7,10 @@
     color:#707070;
 }
 
+body{
+    margin: 0;
+}
+
 .container{
     width: 95vw;
     margin: 0 auto;
@@ -59,6 +63,7 @@ h2,
     font-family: 'Lora', serif;
     font-weight: 400;
     color: #143774;
+    margin-top: 0;
 }
 
 .title h1{
@@ -191,6 +196,19 @@ aside{
 /* ************************footer************************************ */
 
 footer{
+    background-color: #143774;
     text-align: center;
+    padding: 3em 0;
+    margin: 0;
 }
+
+footer div{
+    color: #FFFFFF;
+    opacity: .7;
+}
+
+.footer-title{
+    font-weight: 700;
+}
+
 /* ************************footer************************************ */

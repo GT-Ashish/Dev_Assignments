@@ -65,7 +65,7 @@ header{
 /* ************************typography************************************ */
 .title h1,
 .article-title,
-h2,
+h2,.widget-body,
 .recent-posts-widget-title{
     font-family: 'Lora', serif;
     font-weight: 400;
@@ -149,11 +149,11 @@ nav li{
     }
 
     main{
-        width: 75%;
+        width: 65%;
     }
 
     aside{
-        width: 20%;
+        width: 30%;
     }
 
     .article-recent{
@@ -186,6 +186,14 @@ nav li{
     margin-bottom: 2.5em ;
 }
 
+/* ************************sidebar************************************ */
+.sidebar-widget{
+    border: 1em solid #EBEBEB;
+    padding: 1em;
+    margin-bottom: 2em;
+    text-align: left;
+}
+/* ************************sidebar************************************ */
 /* ************************footer************************************ */
 
 footer{

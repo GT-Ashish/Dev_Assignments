@@ -59,6 +59,9 @@ header{
     color:#707070;
 }
 
+.article-info{
+    margin: 2em 0;
+}
 
 /* **********************header************************************** */
 
@@ -176,22 +179,16 @@ nav li{
     gap: 2em;
 }
 
-.article-featured{
-    border-bottom: 1px solid #707070;
-
-}
-
-.article-featured,
-.article-recent{
-    margin-bottom: 2.5em ;
-}
-
 /* ************************sidebar************************************ */
 .sidebar-widget{
     border: 1em solid #EBEBEB;
     padding: 1em;
     margin-bottom: 2em;
     text-align: left;
+}
+
+.sidebar-widget img{
+    max-width: 100%;
 }
 /* ************************sidebar************************************ */
 /* ************************footer************************************ */
@@ -213,3 +210,31 @@ footer div{
 }
 
 /* ************************footer************************************ */
+/* ************************articles************************************ */
+
+.article-featured{
+    border-bottom: 1px solid #707070;
+
+}
+
+.article-featured,
+.article-recent{
+    margin-bottom: 2em ;
+}
+
+.recent-image{
+    width: 100%;
+    min-height: 250px;
+    object-fit: cover;
+}
+/* ************************articles************************************ */
+/* ************************widget************************************ */
+
+.widget-image{
+    max-height: 350px;
+    width: 100%;
+    object-fit: cover;
+
+}
+
+/* ************************widget************************************ */

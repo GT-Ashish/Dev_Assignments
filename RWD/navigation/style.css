@@ -76,6 +76,12 @@ h2,.widget-body,
     margin-top: 0;
 }
 
+.widget-title{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
 .title h1{
     font-size: 2rem;
     margin-bottom: 0;
@@ -157,6 +163,8 @@ nav li{
 
     aside{
         width: 30%;
+        min-width: 200px;
+        margin-left: 1em;
     }
 
     .article-recent{
@@ -237,4 +245,17 @@ footer div{
 
 }
 
+.widget-body, .recent-posts-widget-title{
+    margin: 1em 0;
+}
+
+.widget-recent-post {
+    border-bottom: 1px solid #707070;
+    margin-bottom: 1em;
+}
+
+.widget-recent-post:last-child{
+    border-bottom: 0;
+    margin: 0;
+}
 /* ************************widget************************************ */

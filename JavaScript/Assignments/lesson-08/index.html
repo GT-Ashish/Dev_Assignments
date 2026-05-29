@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rock-paper-scissors</title>
+</head>
+<body>
+    <p>
+        rock paper scissors
+    </p>
+    <button onclick="
+    computer = Math.random();
+    if(computer < 1 / 3){
+        score.ties++;
+        alert(`You picked rock. Computer picked rock. Tie.
+Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
+    }
+    else if(computer < 2 / 3){
+        score.losses++;
+        alert(`You picked rock. Computer picked paper. You lose
+Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
+    }
+    else{
+        score.wins++;
+        alert(`You picked rock. Computer picked scissors. You win.
+Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
+    }
+    ">
+        rock
+    </button>
+    <button onclick="
+    computer = Math.random();
+    if(computer < 1 / 3){
+        score.wins++;
+        alert(`You picked paper. Computer picked rock. You win.
+Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
+    }
+    else if(computer < 2 / 3){
+        score.ties++;
+        alert(`You picked paper. Computer picked paper. Tie
+Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
+    }
+    else{
+        score.losses++;
+        alert(`You picked paper. Computer picked scissors. You lose
+Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
+    }
+    ">
+        paper
+    </button>
+    <button onclick="
+    computer = Math.random();
+    if(computer < 1 / 3){
+        score.losses++;
+        alert(`You picked scissors. Computer picked rock. You lose
+Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
+    }
+    else if(computer < 2 / 3){
+        score.wins++;
+        alert(`You picked scissors. Computer picked paper. You win
+Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
+    }
+    else{
+        score.ties++;
+        alert(`You picked scissors. Computer picked scissors. Tie 
+Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
+    }
+    ">
+        scissors
+    </button>
+    <button onclick="score.losses = 0; score.wins = 0; score.ties = 0">
+        Reset Score
+    </button>
+    <script>
+        let computer;
+        let score = {
+            wins : 0,
+            losses : 0,
+            ties : 0
+        };
+    </script>
+</body>
+</html>

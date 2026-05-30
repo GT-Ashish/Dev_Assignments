@@ -1,0 +1,44 @@
+.width{
+    margin: 3em;
+    box-sizing: border-box;
+}
+
+.box{
+    height: 50px;
+    width: 50px;
+    background: red;
+    animation: grow 5s infinite alternate-reverse;
+}
+
+.ball{
+    background: red;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    animation: bounce 1s infinite alternate ease-in-out;
+}
+
+/* @keyframes grow{
+    0%{width: 50px; height: 50px; background: red}
+    25%{width: 100px; height:50px; background: green}
+    50%{width: 100px; height:100px; background: blue}
+    80%{width: 50px; height:100px; background: blue}
+    100%{width: 50px; height:50px; background: green}
+} */
+
+@keyframes bounce{
+    to{transform: translateX(calc(100vh - 150px))}
+}
+
+.b{
+    height: 100px;
+    width: 200px;
+    background: pink;
+    animation: test 3s;
+    animation-fill-mode: backwards;
+}
+
+@keyframes test{
+    from{background : red;}
+    to{background: green;}
+}

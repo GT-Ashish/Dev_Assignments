@@ -74,11 +74,13 @@ Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
     </button>
     <script>
         let computer;
-        let score = {
+        const score = {
             wins : 0,
             losses : 0,
             ties : 0
         };
+        console.log(localStorage.getItem('score'));
+        localStorage.setItem('score', JSON.stringify(score));
     </script>
 </body>
 </html>

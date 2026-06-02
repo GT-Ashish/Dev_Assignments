@@ -11,104 +11,90 @@
     </p>
     <p>
         <button onclick="
-            equation += 1;
-            console.log(equation);
+         updateCalculation('1')
             ">
             1
         </button>
         <button onclick="
-            equation += 2;
-            console.log(equation);
+          updateCalculation('2')
             ">
             2
         </button>
         <button onclick="
-            equation += 3;
-            console.log(equation);
+        updateCalculation('3')
             ">
             3
         </button>
         <button onclick="
-            equation += ' + ';
-            console.log(equation);
+          updateCalculation(' + ')
             ">
             +
         </button>
     </p>
     <p>
         <button onclick="
-            equation += 4;
-            console.log(equation);
+           updateCalculation('4')
             ">
             4
         </button>
         <button onclick="
-            equation += 5;
-            console.log(equation);
+            updateCalculation('5')
             ">
             5
         </button>
         <button onclick="
-            equation += 6;
-            console.log(equation);
+          updateCalculation('6')
             ">
             6
         </button>
         <button onclick="
-            equation += ' - ';
-            console.log(equation);
+            updateCalculation(' - ')
             ">
             -
         </button>
     </p>
     <p>
         <button onclick="
-            equation += 7;
-            console.log(equation);
+            updateCalculation('7')
             ">
             7
         </button>
         <button onclick="
-            equation += 8;
-            console.log(equation);
+            updateCalculation('8')
             ">
             8
         </button>
         <button onclick="
-            equation += 9;
-            console.log(equation);
+            updateCalculation('9')
             ">
             9
         </button>
         <button onclick="
-            equation += ' * ';
-            console.log(equation);
+            updateCalculation(' * ')
             ">
             *
         </button>
     </p>
     <p>
         <button onclick="
-            equation += 0;
-            console.log(equation);
+            updateCalculation('0')
             ">
             0
         </button>
         <button onclick="
-            equation += '.';
-            console.log(equation);
+            updateCalculation('.')
             ">
             .
         </button>
         <button onclick="
             equation = eval(equation);
             console.log(equation);
+            localStorage.setItem('equation', JSON.stringify(equation));
             ">
             =
         </button>
         <button onclick="
-            equation += ' / ';
-            console.log(equation);
+            updateCalculation(' / ')
             ">
             /
         </button>
@@ -116,12 +102,19 @@
 
     <button onclick="
             equation = '';
+            localStorage.setItem('equation', JSON.stringify(equation));
             console.log('Cleared.');
             ">
             Clear
         </button>
     <script>
-        let equation = '';
+        let equation = JSON.parse(localStorage.getItem('equation')) || '';
+
+        function updateCalculation(value){
+            equation += value ;
+            console.log(equation);
+            localStorage.setItem('equation', JSON.stringify(equation));
+        }
     </script>
 </body>
 </html>

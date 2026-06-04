@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM-exercises</title>
+</head>
+<body>
+    <p>
+        <br>
+        <br>
+        Amazon Shipping Calculator<br><br>
+        Order under $40 = +$10 shipping.<br><br>
+        Order over $40 = FREE shipping.
+    </p>
+    <input onkeydown="isEnter(event)"
+    placeholder="Cost of order">
+    <button onclick="displayPrice()">
+        Calculate
+    </button>
+    <p class="js-final-price"></p>
+    <script>
+        const finalPrice = document.querySelector('.js-final-price');
+        const price = document.querySelector('input');
+        function isEnter(event){
+            if(event.key === 'Enter'){
+                displayPrice();
+            }
+        }
+        function displayPrice(){
+            let result = Number(price.value) * 100;
+            console.log(result);
+            if(result < 4000){
+                    result += 1000;
+                }
+                finalPrice.innerText = `$${result / 100}`; 
+        }
+    </script>
+</body>
+</html>

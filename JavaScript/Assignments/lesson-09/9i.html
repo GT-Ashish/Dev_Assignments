@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart</title>
+</head>
+<body>
+    <button onclick="changeQuantity(1)">
+        Add to Cart
+    </button>
+    <button onclick="changeQuantity(2)">
+        +2
+    </button>
+    <button onclick="changeQuantity(3)">
+        +3
+    </button>
+    <button onclick="changeQuantity(4)">
+        +4
+    </button>
+    <button onclick="changeQuantity(5)">
+        +5
+    </button>
+    <button onclick="changeQuantity(-1)">
+        Remove from Cart
+    </button>
+    <button onclick="changeQuantity(-2)">
+        -2
+    </button>
+    <button onclick="changeQuantity(-3)">
+        -3
+    </button>
+    <button onclick="
+        quantity = 0;
+        localStorage.setItem('quantity', JSON.stringify(quantity));
+        displayQuantity();
+        ">
+        Reset Cart
+    </button>
+    <p class="cart-quantity">
+
+    </p>
+    <script>
+        const cartQuantity = document.querySelector('.cart-quantity');
+        let quantity = JSON.parse(localStorage.getItem('quantity')) || 0;
+        displayQuantity();
+        function changeQuantity(value){
+            quantity += value;
+            if(quantity < 0){
+                quantity = 0;
+            }
+            localStorage.setItem('quantity', JSON.stringify(quantity));
+            displayQuantity();
+        }
+
+        function displayQuantity(){
+            cartQuantity.innerText = `Cart quantity: ${quantity}`;
+        }
+    </script>
+</body>
+</html>

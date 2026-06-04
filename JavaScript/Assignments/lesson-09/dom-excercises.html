@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM-exercises</title>
+</head>
+<body>
+    <p>
+        YouTube Subscribe Button
+    </p>
+    <button onclick="subscribe();" class="js-sub-btn">Subscribe
+    </button>
+    <p>
+        <br>
+        <br>
+        Rock Paper Scissors
+    </p>
+    <a href="./09-rock-paper-scissors.html">
+        Click here
+    </a>
+    <p>
+        <br>
+        <br>
+        Amazon Shipping Calculator<br><br>
+        Order under $40 = +$10 shipping.<br><br>
+        Order over $40 = FREE shipping.
+    </p>
+    <input onkeydown="isEnter(event)"
+    placeholder="Cost of order">
+    <button onclick="displayPrice()">
+        Calculate
+    </button>
+    <p class="js-final-price"></p>
+    <script>
+        const finalPrice = document.querySelector('.js-final-price');
+        const price = document.querySelector('input');
+        function isEnter(event){
+            if(event.key === 'Enter'){
+                displayPrice();
+            }
+        }
+        function displayPrice(){
+            let result = Number(price.value);
+            if(result < 40){
+                    result += 10;
+                }
+                finalPrice.innerText = `$${result}`; 
+        }
+        function subscribe(){
+        let btn = document.querySelector('.js-sub-btn');
+        if(btn.innerText === 'subscribe'){
+            btn.innerText = 'subscribed';
+        }
+        else{
+            btn.innerText = 'subscribe';
+        }
+       }
+    </script>
+</body>
+</html>

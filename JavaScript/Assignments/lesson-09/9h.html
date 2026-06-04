@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM-exercises</title>
+</head>
+<body>
+    <input onkeydown="key(event)"
+    placeholder="Enter text" class="input-text">
+    <p class="display-text"></p>
+    <script>
+        const inputText = document.querySelector('.input-text');
+        let str = '';
+        function key(event){
+            // str += event.key
+            // document.querySelector('.display-text').innerText = str;
+            document.querySelector('.display-text').innerText = inputText.value;
+        }
+    </script>
+</body>
+</html>

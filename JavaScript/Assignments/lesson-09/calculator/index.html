@@ -4,103 +4,159 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>calculator</title>
+    <style>
+        body{
+            font-family: arial;
+            color: white;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        p{
+            margin: 5px;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            padding: 2em;
+            background-color: rgb(0, 0, 0);
+            border-radius: 15px;
+        }
+
+        button{
+            color: inherit;
+            font-size: 1rem;
+            font-weight: bold;
+            width: 50px;
+            height: 50px;
+            padding: 1em;
+            margin: 5px;
+            border-radius: 50%;
+            border: none;
+            background-color: rgb(57, 55, 55);
+        }
+
+        .yellow{
+            background-color: rgb(255, 183, 0);
+            color: black;
+        }
+        
+        .clear-button{
+            font-size: .75rem;
+            margin: 10px;
+        }
+
+        .display-text{
+            padding: 5px;
+            padding-left: 10px;
+            background-color: rgb(255, 183, 0);
+            border-radius: 5px;
+            color: black;
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
-    <p class="display-text">
-        Calculator
-    </p>
-    <p>
-        <button onclick="
-         updateCalculation('1')
-            ">
-            1
-        </button>
-        <button onclick="
-          updateCalculation('2')
-            ">
-            2
-        </button>
-        <button onclick="
-        updateCalculation('3')
-            ">
-            3
-        </button>
-        <button onclick="
-          updateCalculation(' + ')
-            ">
-            +
-        </button>
-    </p>
-    <p>
-        <button onclick="
-           updateCalculation('4')
-            ">
-            4
-        </button>
-        <button onclick="
-            updateCalculation('5')
-            ">
-            5
-        </button>
-        <button onclick="
-          updateCalculation('6')
-            ">
-            6
-        </button>
-        <button onclick="
-            updateCalculation(' - ')
-            ">
-            -
-        </button>
-    </p>
-    <p>
-        <button onclick="
-            updateCalculation('7')
-            ">
-            7
-        </button>
-        <button onclick="
-            updateCalculation('8')
-            ">
-            8
-        </button>
-        <button onclick="
-            updateCalculation('9')
-            ">
-            9
-        </button>
-        <button onclick="
-            updateCalculation(' * ')
-            ">
-            *
-        </button>
-    </p>
-    <p>
-        <button onclick="
-            updateCalculation('0')
-            ">
-            0
-        </button>
-        <button onclick="
-            updateCalculation('.')
-            ">
-            .
-        </button>
-        <button onclick="
-            equation = eval(equation);
-            displayCalculation();
-            localStorage.setItem('equation', JSON.stringify(equation));
-            ">
-            =
-        </button>
-        <button onclick="
-            updateCalculation(' / ')
-            ">
-            /
-        </button>
-    </p>
+    <div class="container">
+        <p>Calculator</p>
+        <p class="display-text"></p>
+        <p>
+            <button onclick="
+            updateCalculation('1')
+                ">
+                1
+            </button>
+            <button onclick="
+            updateCalculation('2')
+                ">
+                2
+            </button>
+            <button onclick="
+            updateCalculation('3')
+                ">
+                3
+            </button>
+            <button class="yellow" onclick="
+            updateCalculation(' + ')
+                ">
+                +
+            </button>
+        </p>
+        <p>
+            <button onclick="
+            updateCalculation('4')
+                ">
+                4
+            </button>
+            <button onclick="
+                updateCalculation('5')
+                ">
+                5
+            </button>
+            <button onclick="
+            updateCalculation('6')
+                ">
+                6
+            </button>
+            <button class="yellow" onclick="
+                updateCalculation(' - ')
+                ">
+                -
+            </button>
+        </p>
+        <p>
+            <button onclick="
+                updateCalculation('7')
+                ">
+                7
+            </button>
+            <button onclick="
+                updateCalculation('8')
+                ">
+                8
+            </button>
+            <button onclick="
+                updateCalculation('9')
+                ">
+                9
+            </button>
+            <button class="yellow" onclick="
+                updateCalculation(' * ')
+                ">
+                *
+            </button>
+        </p>
+        <p>
+            <button onclick="
+                updateCalculation('0')
+                ">
+                0
+            </button>
+            <button onclick="
+                updateCalculation('.')
+                ">
+                .
+            </button>
+            <button onclick="
+                equation = eval(equation);
+                displayCalculation();
+                localStorage.setItem('equation', JSON.stringify(equation));
+                ">
+                =
+            </button>
+            <button class="yellow" onclick="
+                updateCalculation(' / ')
+                ">
+                /
+            </button>
+        </p>
 
-    <button onclick="
+        <button class="clear-button" onclick="
             equation = '0';
             displayCalculation();
             localStorage.setItem('equation', JSON.stringify(equation));
@@ -108,6 +164,7 @@
             ">
             Clear
         </button>
+    </div>
     <script>
         const displayText = document.querySelector('.display-text');
         let equation = JSON.parse(localStorage.getItem('equation')) || '0';
@@ -120,7 +177,7 @@
             localStorage.setItem('equation', JSON.stringify(equation));
         }
         function displayCalculation(){
-            displayText.innerText = equation;
+            displayText.innerHTML = equation;
         }
     </script>
 </body>

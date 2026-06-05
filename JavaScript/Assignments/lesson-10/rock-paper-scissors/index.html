@@ -75,11 +75,13 @@
         <p class="score-text"></p>
 
         <button onclick="
-            score.losses = 0; 
-            score.wins = 0; 
-            score.ties = 0;
+            score = {
+                wins : 0,
+                losses : 0,
+                ties : 0
+            };
             displayScore();
-            localStorage.setItem('score'.JSON.stringify(score));
+            localStorage.setItem('score',JSON.stringify(score));
             " class="reset-button">
             Reset Score
         </button>

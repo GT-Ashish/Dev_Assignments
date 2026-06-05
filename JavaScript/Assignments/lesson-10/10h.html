@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10h</title>
+    <style>
+        body{
+            font-family: arial;
+        }
+        .subscribe-button{
+            background-color: black;
+            color: white;
+            font-weight: bold;
+            padding: .75em 1em;
+            border-radius: 20px;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 3em;
+        }
+        .subscribe-active{
+            color: black;
+            background-color: rgb(225, 221, 221);
+        }
+
+        .input-text{
+            font-size: 1rem;
+            padding: .6em;
+        }
+
+        .calculate-button{
+            background-color: rgb(20, 154, 20);
+            color: white;
+            cursor: pointer;
+            border: none;
+            padding: .95em;
+            cursor: pointer;
+        }
+        .final-price{
+            margin-bottom: 3em;
+        }
+        .error-text{
+            color: red;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        YouTube Subscribe Button
+    </p>
+    <button onclick="subscribe();" class="js-sub-btn subscribe-button">Subscribe
+    </button>
+    <p>
+        Amazon Shipping Calculator<br><br>
+        Order under $40 = +$10 shipping.<br><br>
+        Order over $40 = FREE shipping.
+    </p>
+    <input onkeydown="isEnter(event)"
+    placeholder="Cost of order" class="input-text">
+    <button onclick="displayPrice()" class="js-calculate-btn calculate-button">
+        Calculate
+    </button>
+    <p class="error-text">hidden error text</p>
+    <p class="js-final-price final-price"></p>
+    <p>
+        Rock Paper Scissors
+    </p>
+    <a href="./rock-paper-scissors/index.html">
+        Click here
+    </a>
+    <script>
+        const finalPrice = document.querySelector('.js-final-price');
+        const price = document.querySelector('input');
+        const errorText = document.querySelector('.error-text');
+        function isEnter(event){
+            if(event.key === 'Enter'){
+                displayPrice();
+            }
+        }
+        function displayPrice(){
+            let result = Number(price.value);
+            if(result < 0){
+                errorText.innerText = 'Error: cost cannot be less than $0';
+                errorText.style.opacity = '1';
+            }
+            else if(result < 40){
+                result += 10;
+                finalPrice.innerText = `$${result}`; 
+            }
+        }
+        function subscribe(){
+        let subBtn = document.querySelector('.js-sub-btn');
+        if(subBtn.innerText === 'Subscribe'){
+            subBtn.innerText = 'Subscribed';
+            subBtn.classList.add('subscribe-active');
+        }
+        else{
+            subBtn.innerText = 'Subscribe';
+            subBtn.classList.remove('subscribe-active');
+        }
+       }
+    </script>
+</body>
+</html>

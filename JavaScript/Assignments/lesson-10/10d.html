@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10d</title>
+    <style>
+        .gaming-button{
+            color: black;
+            background-color: rgb(229, 224, 224);
+            border: none;
+            padding: .5em 1em;
+            border-radius: 3px;
+        }
+        .on{
+            color: white;
+            background-color: black;
+        }
+
+    </style>
+</head>
+<body>
+    <button class="js-gaming-button gaming-button">
+        Gaming
+    </button>
+    <script>
+        const gamingButton = document.querySelector('.js-gaming-button');
+        gamingButton.addEventListener('click',() => {
+            // if(gamingButton.classList.contains('on')){
+            //     gamingButton.classList.remove('on');
+            // }
+            // else{
+            //     gamingButton.classList.add('on');
+            // }
+            gamingButton.classList.toggle('on');
+        })
+    </script>
+</body>
+</html>

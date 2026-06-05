@@ -1,0 +1,54 @@
+body{
+    font-family: arial;
+    color: white;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+p{
+    margin: 5px;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    background-color: rgb(0, 0, 0);
+    border-radius: 15px;
+}
+
+button{
+    color: inherit;
+    font-size: 1rem;
+    font-weight: bold;
+    width: 50px;
+    height: 50px;
+    padding: 1em;
+    margin: 5px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgb(57, 55, 55);
+}
+
+.yellow{
+    background-color: rgb(255, 183, 0);
+    color: black;
+}
+
+.clear-button{
+    font-size: .75rem;
+    margin: 10px;
+}
+
+.display-text{
+    padding: 5px;
+    padding-left: 10px;
+    background-color: rgb(255, 183, 0);
+    border-radius: 5px;
+    color: black;
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10g</title>
+    <style>
+        button{
+            color: black;
+            background-color: rgb(229, 224, 224);
+            border: none;
+            padding: .5em 1em;
+            border-radius: 3px;
+        }
+        .on{
+            color: white;
+            background-color: black;
+        }
+
+    </style>
+</head>
+<body>
+    <button onclick="toggle('.js-gaming-button')" class="js-gaming-button">
+        Gaming
+    </button>
+    <button onclick="toggle('.js-music-button')" class="js-music-button">
+        music
+    </button>
+    <button onclick="toggle('.js-tech-button')" class="js-tech-button">
+        tech
+    </button>
+    
+    
+    <script>
+        let flag = true;
+        function toggle(name){
+        let button = document.querySelector(`${name}`);
+            if(button.classList.contains('on')){
+                button.classList.remove('on');
+                flag = true;
+            }
+            else{
+                if(flag){
+                    button.classList.add('on');
+                    flag = false;
+                }
+            }
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+body{
+    box-sizing: border-box;
+    font-family: arial;
+}
+button{
+    color: white;
+    height: 40px;
+    width: 120px;
+    border: none;
+    font-size: 1rem;
+}
+
+.add-button{
+    background-color: green;
+}
+
+.delete-button{
+    background-color: rgb(150, 3, 3);
+    margin-left: 70px;
+}
+input{
+    padding: .5em 2em .5em .5em;
+    font-size: 1rem;
+}
+
+.js-list-text{
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+span{
+    width: 20%;
+}

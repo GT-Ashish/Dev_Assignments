@@ -26,11 +26,35 @@ const dateInput = document.querySelector('.js-date-input');
 const addButton3 = document.querySelector('.js-add-button-3');
 const listText2 = document.querySelector('.js-list-text-2');
 let array3 = [];
-let acc2 = '';
-listText2.innerHTML = acc2;
+listText2.innerHTML = '';
 addButton3.addEventListener('click',() =>{
-    acc2 += `<span>${input3.value}</span> ${dateInput.value}<button class="delete-button"> Delete</button><br>`;
+    let listObj = {
+        task : input3.value,
+        date : dateInput.value
+    };
+    array3.push(listObj);
     input3.value = null;
     dateInput.value = null;
-    listText2.innerHTML = acc2;    
+    renderList();    
 });
+
+function renderList(){
+    let html = "";
+    for(let i = 0; i < array3.length; i++){
+        html += `
+        <div>
+            ${array3[i].task}
+        </div>
+        <div>
+            ${array3[i].date}
+        </div>
+        <button class="delete-button" onclick="
+        array3.splice(${i}, 1);
+        renderList();
+        ">
+            Delete
+        </button>
+        `
+    }
+    listText2.innerHTML = html;
+};

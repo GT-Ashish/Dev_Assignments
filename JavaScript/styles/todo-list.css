@@ -16,20 +16,19 @@ button{
 
 .delete-button{
     background-color: rgb(150, 3, 3);
-    margin-left: 70px;
 }
+
 input{
-    padding: .5em 2em .5em .5em;
-    font-size: 1rem;
-}
-
-.js-list-text{
     font-size: 1.25rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-span{
-    width: 20%;
+.js-list-text, .todo-list-container{
+    font-size: 1.25rem;
+    display: grid;
+    grid-template-columns: 250px 200px 100px;
+    gap: 10px; 
+}
+
+.todo-list-container{
+    margin-bottom: 10px;
 }

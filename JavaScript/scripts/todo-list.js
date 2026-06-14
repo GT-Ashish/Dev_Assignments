@@ -26,7 +26,8 @@ const dateInput = document.querySelector('.js-date-input');
 const addButton3 = document.querySelector('.js-add-button-3');
 const listText2 = document.querySelector('.js-list-text-2');
 let array3 = [];
-listText2.innerHTML = JSON.parse(localStorage.getItem('html')) || "";
+listText2.innerHTML = localStorage.getItem('html') || "";
+// localStorage.removeItem('html');
 addButton3.addEventListener('click',() =>{
     let listObj = {
         task : input3.value,
@@ -39,7 +40,7 @@ addButton3.addEventListener('click',() =>{
 });
 
 function renderList(){
-    let html;
+    let html = "";
     for(let i = 0; i < array3.length; i++){
         html += `
         <div>
@@ -51,12 +52,14 @@ function renderList(){
         <button class="delete-button" onclick="
         array3.splice(${i}, 1);
         renderList();
-        localStorage.setItem('html', JSON.stringify(html));
+        localStorage.setItem('html',html);
         ">
             Delete
         </button>
         `
     }
-    localStorage.setItem('html',JSON.stringify(html));
+    localStorage.setItem('html',html);
     listText2.innerHTML = html;
 };
+
+//bugs hai fix karo

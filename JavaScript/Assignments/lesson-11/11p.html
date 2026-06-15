@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11p</title>
+</head>
+<body>
+    <script>
+        function checkExists(array){
+            for(let i = 0; i < array.length; i++){
+                if(array[i] === 'search'){
+                    return i;
+                }
+            }
+            return -1;
+        };
+        console.log(checkExists(['apple','search', 'banana', 'guava']));
+    </script>
+</body>
+</html>

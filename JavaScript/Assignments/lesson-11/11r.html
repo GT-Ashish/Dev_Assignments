@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11r</title>
+</head>
+<body>
+    <script>
+        function skipEgg(array){
+            let arr = [];
+            for(let i = 0; i < array.length; i++){
+                if(array[i] !== 'egg'){
+                    arr.push(array[i]);
+                }
+            }
+            return arr;
+        };
+        console.log(skipEgg(['apple','search', 'egg','banana', 'guava']));
+    </script>
+</body>
+</html>
